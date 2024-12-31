@@ -53,8 +53,8 @@
 
         #page2 p strong {
             color: #d94f3d;
-            font-size: 2em;
-        }
+            font-size: 1.7em;
+}
 	
 	.footer {
             background-color: #333;
@@ -82,7 +82,7 @@
     <div id="page1">
         <h1>Happy and blessed New Year Wishes for 2025</h1>
         <h2>Let us trust and hope in the Word of God in this new year</h2>
-	<h3>Please enter your FULL name:</h3>
+	<h3>Please enter your full name:</h3>
         <input type="text" id="nameInput" placeholder="Enter your name">
         <button onclick="generatePromise()">Submit</button>
     </div>
@@ -91,16 +91,10 @@
     <div id="page2" style="display: none;">
         <h2>Dear <span id="userName"></span>,</h2>
         <h2>A verse of promise and encouragement for you in 2025 is:</h2>
-	<br>        
-	<p><strong><i><span id="promiseVerse"></span></i></strong></p>
-	<br>        
-	<button onclick="goBack()">Back</button>
-	<br>
-	<img src="https://www.pngmart.com/files/21/Bible-Book-PNG-Photos.png" width="240" height="180">
-</div>
-	
-
-
+	<div style="max-width: 300px; max-height: 300px; overflow: auto;"></div>        
+	<p><strong><i><span id="promiseVerse"></span><i></strong></p>
+        <button onclick="goBack()">Back</button>
+    </div>
 <!-- Footer section -->
     <div class="footer">
         <p>&copy; Blessings, Dr. Sabin Thomas and family</p>
@@ -109,11 +103,78 @@
     <script>
         // List of promise verses
         const promiseVerses = [
-            "Jeremiah 29:11 - For I know the plans I have for you.",
-            "Isaiah 41:10 - Fear not, for I am with you.",
-            "Philippians 4:13 - I can do all things through Christ.",
-            "Psalm 23:1 - The Lord is my shepherd; I shall not want.",
-            "Matthew 5:14 - You are the light of the world."
+ "Philippians 4:19 - And my God will supply every need of yours according to his riches in glory in Christ Jesus.",
+   "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+   "Isaiah 41:10 - Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+"2 Corinthians 1:20 - For all the promises of God find their Yes in him. That is why it is through him that we utter our Amen to God for his glory.",
+"Isaiah 43:2 - When you pass through the waters, I will be with you; and through the rivers, they shall not overwhelm you; ",
+"Isaiah 40:31 - But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles; ",
+"Psalm 84:11 - For the Lord God is a sun and shield; the Lord bestows favor and honor. No good thing does he withhold from those who walk uprightly.",
+"Joshua 23:14 - and you know in your hearts and souls, all of you, that not one word has failed of all the good things that the Lord your God promised concerning you.",
+"Romans 8:28 - And we know that for those who love God all things work together for good, for those who are called according to his purpose.",
+"John 14:27 - Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+"James 1:5 - If any of you lacks wisdom, let him ask God, who gives generously to all without reproach, and it will be given him.",
+"Deuteronomy 31:8 - It is the Lord who goes before you. He will be with you; he will not leave you or forsake you. Do not fear or be dismayed.”",
+"Matthew 11:28-29 - Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me...",
+"Psalm 37:4 - Delight yourself in the Lord, and he will give you the desires of your heart.",
+"Revelation 3:5 - The one who conquers will be clothed thus in white garments, and I will never blot his name out of the book of life. ",
+"Hebrews 10:23 - Let us hold fast the confession of our hope without wavering, for he who promised is faithful.",
+"Joshua 1:9 - Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
+"Isaiah 40:29-31 - He gives power to the faint, and to him who has no might he increases strength. ",
+"Isaiah 54:17 - No weapon that is fashioned against you shall succeed, and you shall refute every tongue that rises against you in judgment.",
+"Revelation 21:4 - He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore..",
+"Exodus 14:14 - The Lord will fight for you, and you have only to be silent.",
+"Isaiah 26:3 - You keep him in perfect peace whose mind is stayed on you, because he trusts in you.",
+"Jeremiah 30:17 - For I will restore health to you, and your wounds I will heal, declares the Lord, because they have called you an outcast: It is Zion, for whom no one cares!",
+"Philippians 4:13 - I can do all things through him who strengthens me.",
+"John 11:25-26 - Jesus said to her, “I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live...",
+"1 Kings 8:56 - Blessed be the Lord who has given rest to his people Israel, according to all that he promised.",
+"Isaiah 54:10 - For the mountains may depart and the hills be removed, but my steadfast love shall not depart from you, and my covenant of peace shall not be removed... ",
+"Exodus 15:26 - ... I will put none of the diseases on you that I put on the Egyptians, for I am the Lord, your healer.",
+"Psalm 23:1-2 - The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters." ,
+"Romans 8:38-39 - For I am sure that neither death nor life, nor angels nor rulers,... nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.",
+"Deuteronomy 7:9 - Know therefore that the Lord your God is God, the faithful God who keeps covenant and steadfast love with those who love him and keep his commandments, to a thousand generations,",
+"Numbers 23:19 ESV - God is not man, that he should lie, or a son of man, that he should change his mind. Has he said, and will he not do it? Or has he spoken, and will he not fulfill it?",
+"Romans 8:32 - He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?",
+"Proverbs 1:33 - But whoever listens to me will dwell secure and will be at ease, without dread of disaster.",
+"Isaiah 41:13 - For I, the Lord your God, hold your right hand; it is I who say to you, “Fear not, I am the one who helps you.",
+"Psalm 23:4 - Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+"Hebrews 13:5 - Keep your life free from love of money, and be content with what you have, for he has said, “I will never leave you nor forsake you.",
+"Philippians 4:6-9 - Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God....",
+"1 Peter 5:10 - And after you have suffered a little while, the God of all grace, who has called you to his eternal glory in Christ, will himself restore, confirm, strengthen, and establish you.",
+"Deuteronomy 31:6 - Be strong and courageous. Do not fear or be in dread of them, for it is the Lord your God who goes with you. He will not leave you or forsake you.",
+"Matthew 7:7 - Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
+"Ezekiel 36:26 - And I will give you a new heart, and a new spirit I will put within you. And I will remove the heart of stone from your flesh and give you a heart of flesh.",
+"Psalm 89:34 - I will not violate my covenant or alter the word that went forth from my lips.",
+"Psalm 32:8 - I will instruct you and teach you in the way you should go; I will counsel you with my eye upon you.",
+"Isaiah 49:25 - For thus says the Lord: “Even the captives of the mighty shall be taken, and the prey of the tyrant be rescued, for I will contend with those who contend with you, and I will save your children.",
+"Luke 11:13 - If you then, who are evil, know how to give good gifts to your children, how much more will the heavenly Father give the Holy Spirit to those who ask him!.",
+"Malachi 3:10 - And thereby put me to the test, says the Lord of hosts, if I will not open the windows of heaven for you and pour down for you a blessing until there is no more need.",
+"Romans 4:21 - Fully convinced that God was able to do what he had promised.",
+"Proverbs 3:5-6 - Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+"Psalm 34:4 - I sought the Lord, and he answered me and delivered me from all my fears.",
+"Romans 8:37 - No, in all these things we are more than conquerors through him who loved us.",
+"1 Timothy 4:8 - For while bodily training is of some value, godliness is of value in every way, as it holds promise for the present life and also for the life to come.",
+"1 Peter 5:7 - Casting all your anxieties on him, because he cares for you.",
+"John 15:7-8 - If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you. By this my Father is glorified, that you bear much fruit and so prove to be my disciples.",
+"Joshua 21:45 ESV - Not one word of all the good promises that the Lord had made to the house of Israel had failed; all came to pass.",
+"1 Thessalonians 5:24 - He who calls you is faithful; he will surely do it.",
+"Psalm 34:17 - When the righteous cry for help, the Lord hears and delivers them out of all their troubles.",
+"Malachi 4:2 - But for you who fear my name, the sun of righteousness shall rise with healing in its wings. You shall go out leaping like calves from the stall.",
+"Micah 7:19 - He will again have compassion on us; he will tread our iniquities underfoot. You will cast all our sins into the depths of the sea.",
+"Psalm 138:7 - Though I walk in the midst of trouble, you preserve my life; you stretch out your hand against the wrath of my enemies, and your right hand delivers me.",
+"Philippians 1:6 - And I am sure of this, that he who began a good work in you will bring it to completion at the day of Jesus Christ.",
+"Luke 18:27 - But he said, “What is impossible with man is possible with God.",
+"2 Corinthians 4:8-9 - We are afflicted in every way, but not crushed; perplexed, but not driven to despair; persecuted, but not forsaken; struck down, but not destroyed;",
+"Psalm 103:11-12 - As far as the east is from the west, so far does he remove our transgressions from us.",
+"Psalm 91:4-6 - He will cover you with his pinions, and under his wings you will find refuge; his faithfulness is a shield and buckler..." ,
+"Mark 11:24 - Therefore I tell you, whatever you ask in prayer, believe that you have received it, and it will be yours.",
+"John 10:10 - The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly.",
+"Jeremiah 29:11 - For I know the plans I have for you.",
+"Isaiah 41:10 - Fear not, for I am with you.",
+"Philippians 4:13 - I can do all things through Christ.",
+"Psalm 23:1 - The Lord is my shepherd; I shall not want.",
+"Matthew 5:14 - You are the light of the world."
         ];
 
         // Database to store names and associated promise verses
@@ -123,7 +184,7 @@
     const nameInput = document.getElementById('nameInput').value.trim();
 
     if (nameInput) {
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyPLUTF2xnqpUId8_TVkrCJFm1qJQZFC361sBdLs_Aq83s_7sFA6sgTcGI28_FSBmErMQ/exec?name=" + encodeURIComponent(nameInput);
+        const scriptURL = "https://script.google.com/macros/s/AKfycbySQ3IhiCE061GbuYDtqmrBMsu82lUmbkkPhQ1bggzTGgQ1dAjA3BrGD49gH7cITErVWg/exec?name=" + encodeURIComponent(nameInput);
 
         fetch(scriptURL)
             .then(response => response.json())
