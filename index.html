@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Verse - Happy New Year 2025!</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #F0F4F8;
+            color: #0F3460;
+        }
+
+        /* New Year Header */
+        .header {
+            background: linear-gradient(to bottom, #4B0082, #6A5ACD);
+            padding: 20px;
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form and Content Styling */
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 80%;
+            max-width: 300px;
+            background: #f5deb3;
+        }
+
+        button {
+            background: #A7C6ED;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #B9D9EB;
+        }
+
+        #page2 p strong {
+            color: #d94f3d;
+            font-size: 3.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Happy New Year Header -->
+    <div class="header">
+        🎉 Happy New Year 2025! 🎉
+    </div>
+    <div id="countdown"></div>
+
+    <!-- Page 1 -->
+    <div id="page1">
+        <h1>Happy and blessed New Year Wishes for 2025</h1>
+        <h2>Let us trust and hope in the Word of God in this new year</h2>
+	<h3>Please enter your full name:</h3>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="generatePromise()">Submit</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" style="display: none;">
+        <h2>Dear <span id="userName"></span>,</h2>
+        <h2>A verse of promise and encouragement for 2025 is:</h2>
+        <p><strong><span id="promiseVerse"></span></strong></p>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        // List of promise verses
+        const promiseVerses = [
+            "Jeremiah 29:11 - For I know the plans I have for you.",
+            "Isaiah 41:10 - Fear not, for I am with you.",
+            "Philippians 4:13 - I can do all things through Christ.",
+            "Psalm 23:1 - The Lord is my shepherd; I shall not want.",
+            "Matthew 5:14 - You are the light of the world."
+        ];
+
+        // Database to store names and associated promise verses
+        let nameDatabase = {};
+
+        function generatePromise() {
+    const nameInput = document.getElementById('nameInput').value.trim();
+
+    if (nameInput) {
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyPLUTF2xnqpUId8_TVkrCJFm1qJQZFC361sBdLs_Aq83s_7sFA6sgTcGI28_FSBmErMQ/exec?name=" + encodeURIComponent(nameInput);
+
+        fetch(scriptURL)
+            .then(response => response.json())
+            .then(data => {
+                // Update Page 2 content
+                document.getElementById('userName').textContent = nameInput; // Preserve original casing
+                document.getElementById('promiseVerse').textContent = data.verse;
+
+                // Show Page 2 and hide Page 1
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Something went wrong. Please try again later.");
+            });
+    } else {
+        alert("Please enter your name.");
+    }
+}
+
+        function goBack() {
+            // Show Page 1 and hide Page 2
+            document.getElementById('page1').style.display = 'block';
+            document.getElementById('page2').style.display = 'none';
+
+            // Clear input and results
+            document.getElementById('nameInput').value = '';
+            document.getElementById('userName').textContent = '';
+            document.getElementById('promiseVerse').textContent = '';
+        }
+
+    </script>
+</body>
+</html>
